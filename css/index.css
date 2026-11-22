@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    margin: 32px;
+    background-color: #1D1A66;
+    font-family: 'Fredoka';
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    width: 292px;
+    height: 66px;
+    border: none;
+    border-radius: 30px;
+    background: #5A34D6;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    color: #FFF;
+    font-family: Fredoka;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.684px;
+
+    cursor: pointer;
+
+    position: relative;        /* referência para o ícone */
+    justify-content: center;   /* centraliza o texto */
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+
+    transition: 0.3s ease, 0.3s ease, 0.3s ease;
+}
+
+button img {
+    position: absolute;
+    left: 24px;                /* distância do ícone até a borda */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+}
+
+button:hover {
+    background: #6B45E8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.aba-lateral {
+    width: 340px;
+    height: 660px;
+    background: rgba(90, 52, 214, 0.45);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;   /* empilha logo e menu */
+    align-items: center;
+    gap: 24px;
+    padding: 32px 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.unplug {
+    margin: 0;
+    text-align: center;
+    font-family: Fredoka;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -1.216px;
+    background: linear-gradient(162deg, #C97BFD 41.12%, #80C6FF 60.76%, #5826FA 81.56%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;   /* botões um embaixo do outro */
+    gap: 16px;
+}
