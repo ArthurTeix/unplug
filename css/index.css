@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 32px;
     background: linear-gradient(180deg, #04112B 0%, #071B45 100%);
     font-family: 'Fredoka';
     color: #FFF;
+    overflow-x: hidden;  
 
-    display: flex;          /* sidebar e conteúdo lado a lado */
+    display: flex; 
     align-items: flex-start;
     gap: 48px;
 }
@@ -34,21 +39,19 @@ button {
 
     cursor: pointer;
 
-    position: relative;        /* referência para o ícone */
-    justify-content: center;   /* centraliza o texto */
-    padding: 0 24px;
-
+    position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
     padding: 0 24px;
 
-    transition: 0.3s ease, 0.3s ease, 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button img {
     position: absolute;
-    left: 24px;                /* distância do ícone até a borda */
+    left: 24px;
     top: 50%;
     transform: translateY(-50%);
     width: 32px;
@@ -71,8 +74,8 @@ button:active {
     right: 0;
     bottom: 0;
     height: 45vh;
-    z-index: -1;            /* fica atrás de todo o conteúdo */
-    pointer-events: none;   /* não atrapalha cliques */
+    z-index: -1;
+    pointer-events: none;
 }
 
 .ondas svg {
@@ -81,6 +84,7 @@ button:active {
     display: block;
 }
 
+/* ========== SIDEBAR ========== */
 .aba-lateral {
     width: 340px;
     height: 660px;
@@ -88,12 +92,11 @@ button:active {
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
     border-radius: 30px;
     display: flex;
-    flex-direction: column;   /* empilha logo e menu */
+    flex-direction: column;
     align-items: center;
     gap: 24px;
     padding: 32px 0;
-    box-sizing: border-box;
-    flex-shrink: 0;         /* impede a sidebar de encolher */
+    flex-shrink: 0;
 }
 
 .logo {
@@ -125,10 +128,9 @@ button:active {
 .menu {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;   /* botões um embaixo do outro */
+    flex-direction: column;
     gap: 25px;
 }
-
 
 .conteudo {
     display: flex;
@@ -153,12 +155,10 @@ button:active {
 }
 
 .card-respiro {
-    border: 2px solid red;
-    position: relative;     /* referência para o mascote */
+    position: relative;
     width: 640px;
     height: 332px;
     padding: 42px;
-    box-sizing: border-box;
     background: rgba(90, 52, 214, 0.45);
     border-radius: 30px;
 }
@@ -170,7 +170,7 @@ button:active {
     font-size: 36px;
     font-style: normal;
     font-weight: 300;
-    line-height: 150%; /* 54px */
+    line-height: 150%;
     letter-spacing: -0.684px;
 }
 
@@ -219,4 +219,91 @@ button:active {
     bottom: -70px;
     width: 380px;
     height: auto;
+}
+
+@media (max-width: 1280px) {
+    body {
+        margin: 24px;
+        gap: 32px;
+    }
+
+    .aba-lateral {
+        width: 300px;
+    }
+
+    button {
+        width: 260px;
+        font-size: 24px;
+    }
+
+    button img {
+        left: 20px;
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .unplug {
+        font-size: 44px;
+    }
+
+    .saudacao h1 {
+        font-size: 34px;
+    }
+
+    .saudacao p {
+        font-size: 30px;
+    }
+
+    .card-respiro {
+        width: 560px;
+        padding: 32px;
+    }
+
+    .card-texto {
+        width: 330px;
+    }
+
+    .card-titulo {
+        font-size: 22px;
+    }
+
+    .card-lista li {
+        font-size: 20px;
+    }
+
+    .mascote {
+        width: 320px;
+        right: -120px;
+        bottom: -60px;
+    }
+}
+
+@media (max-height: 720px) {
+    .aba-lateral {
+        height: 600px;
+        padding: 30px 0;
+        gap: 12px;
+    }
+
+    .menu {
+        margin-top: 40px;
+        gap: 16px;
+    }
+
+    button {
+        height: 56px;
+    }
+
+    .conteudo {
+        padding-top: 40px;
+        gap: 24px;
+    }
+
+    .card-respiro {
+        height: 290px;
+    }
 }
