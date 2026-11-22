@@ -8,6 +8,30 @@
     <title>Unplug</title>
 </head>
 <body>
+    <div class="ondas" aria-hidden="true">
+        <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="onda-fundo" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2E2A9A" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="#1D1A66" stop-opacity="0.1" />
+                </linearGradient>
+
+                <linearGradient id="onda-frente" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2A2A8C" stop-opacity="0.75" />
+                    <stop offset="100%" stop-color="#0E1B54" stop-opacity="0.2" />
+                </linearGradient>
+            </defs>
+
+            <!-- onda de trás -->
+            <path fill="url(#onda-fundo)"
+                d="M0,220 C240,160 420,120 720,190 C1020,260 1200,250 1440,170 L1440,400 L0,400 Z" />
+
+            <!-- onda da frente -->
+            <path fill="url(#onda-frente)"
+                d="M0,300 C200,250 460,230 720,280 C1000,335 1220,320 1440,260 L1440,400 L0,400 Z" />
+        </svg>
+    </div>
+
     <div class="aba-lateral">
         <span class="logo">
             <img src="img/logo-unplug.png" alt="logo-unplug">
@@ -51,6 +75,38 @@
             </a>
         </nav>
     </div>
+
+    <main class="conteudo">
+        <div class="saudacao">
+            <h1>Olá, usuário!</h1>
+            <p>Como você está se sentindo hoje?</p>
+        </div>
+
+        <section class="card-respiro">
+            <div class="card-texto">
+                <p class="card-titulo">
+                    Que tal tirar um tempinho para um breve respiro?
+                </p>
+
+                <ul class="card-lista">
+                    <li>
+                        <span class="icone">
+                            <img src="img/descompressao.svg" alt="">
+                        </span>
+                        Técnicas de descompressão
+                    </li>
+                    <li>
+                        <span class="icone">
+                            <img src="img/acolhimento.svg" alt="">
+                        </span>
+                        Acolhimento imediato
+                    </li>
+                </ul>
+            </div>
+
+            <img class="mascote" src="img/elefante-mascote.png" alt="Elefante mascote do Unplug">
+        </section>
+    </main>
 
     <script src="js/index.js"></script>
 </body>
