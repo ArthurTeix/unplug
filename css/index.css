@@ -155,6 +155,7 @@ button:active {
 }
 
 .card-respiro {
+    border: solid 2px red;
     position: relative;
     width: 640px;
     height: 332px;
@@ -259,8 +260,14 @@ button:active {
     }
 
     .card-respiro {
-        width: 560px;
+        width: 660px;
         padding: 32px;
+        padding-left: 60px;
+    }
+
+    .card-respiro p {
+        font-weight: 100;
+        font-size: 30px;
     }
 
     .card-texto {
@@ -276,7 +283,7 @@ button:active {
     }
 
     .mascote {
-        width: 320px;
+        width: 360px;
         right: -120px;
         bottom: -60px;
     }
