@@ -6,8 +6,11 @@ document.querySelectorAll(".coluna").forEach((coluna) => {
     const noTopo = lista.scrollTop <= 4;
     const noFim = lista.scrollTop + lista.clientHeight >= lista.scrollHeight - 4;
 
-    lista.style.setProperty("--fade-top", noTopo ? "0px" : "44px");
-    lista.style.setProperty("--fade-bottom", noFim ? "0px" : "44px");
+    // lê o valor de --fade do CSS, então acompanha as media queries
+    const fade = getComputedStyle(lista).getPropertyValue("--fade").trim();
+
+    lista.style.setProperty("--fade-top", noTopo ? "0px" : fade);
+    lista.style.setProperty("--fade-bottom", noFim ? "0px" : fade);
 
     botao.textContent = noFim ? "Ver menos" : "Ver mais";
     };

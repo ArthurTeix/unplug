@@ -5,9 +5,9 @@
   --texto: #ffffff;
   --texto-suave: #c9d3f5;
 
-  --item-altura: 74px;
-  --item-gap: 14px;
-  --fade: 44px;
+  --item-altura: 92px;
+  --item-gap: 16px;
+  --fade: 52px;
 }
 
 /* anima o degradê de sombra da lista */
@@ -138,10 +138,10 @@ a {
   z-index: 1;
   align-self: center;
   justify-self: center;
-  width: min(1000px, 100%);
+  width: min(1240px, 100%);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  gap: 40px;
 }
 
 .coluna {
@@ -170,10 +170,10 @@ a {
 }
 
 .etiqueta {
-  padding: 5px 40px;
+  padding: 7px 52px;
   border-radius: 999px;
   background: var(--cor);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
@@ -182,17 +182,17 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 16px;
+  gap: 16px;
+  padding: 22px;
   border: 1px solid var(--cor-borda);
-  border-radius: 20px;
+  border-radius: 24px;
   background: linear-gradient(180deg, rgba(76, 52, 190, 0.5), rgba(44, 34, 130, 0.45));
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .card-sub {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 300;
   color: var(--texto-suave);
 }
@@ -208,7 +208,7 @@ a {
   gap: var(--item-gap);
 
   /* 3 itens + espaço + um pedaço do 4º */
-  height: calc(var(--item-altura) * 3 + var(--item-gap) * 3 + 14px);
+  height: calc(var(--item-altura) * 3 + var(--item-gap) * 3 + 18px);
   overflow-y: auto;
   scroll-snap-type: y proximity;
   scrollbar-width: none;
@@ -241,10 +241,10 @@ a {
 .item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   height: 100%;
-  padding: 0 14px;
-  border-radius: 14px;
+  padding: 0 18px;
+  border-radius: 16px;
   background: rgba(110, 86, 230, 0.28);
   transition: background 0.2s ease;
 }
@@ -257,16 +257,16 @@ a {
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--cor-suave);
   color: var(--cor);
 }
 
 .item-icone img {
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
 }
 
 .item-texto {
@@ -277,7 +277,7 @@ a {
 }
 
 .item-texto strong {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -285,7 +285,7 @@ a {
 }
 
 .item-texto small {
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: 300;
   color: var(--texto-suave);
   white-space: nowrap;
@@ -295,8 +295,8 @@ a {
 
 .seta {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin-left: auto;
   transition: transform 0.2s ease;
 }
@@ -310,13 +310,13 @@ a {
   display: grid;
   place-items: center;
   width: 100%;
-  height: 34px;
+  height: 42px;
   border: 1px solid var(--cor);
   border-radius: 999px;
   background: rgba(10, 20, 70, 0.55);
   color: var(--cor);
   font-family: inherit;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -332,17 +332,33 @@ a {
 
 /* ========== RESPONSIVO ========== */
 @media (max-height: 720px) {
+  :root {
+    --item-altura: 80px;
+    --item-gap: 14px;
+    --fade: 44px;
+  }
+
   .tela {
     padding: 20px 40px 24px;
   }
 
   .colunas {
-    gap: 28px;
+    gap: 32px;
   }
 
   .card {
-    gap: 10px;
-    padding: 14px;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .item-icone {
+    width: 46px;
+    height: 46px;
+  }
+
+  .item-icone img {
+    width: 24px;
+    height: 24px;
   }
 }
 
