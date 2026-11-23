@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/diario.css">
-    <title>Diário</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Diário</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/diario.css">
 </head>
 <body>
-    <a href="../index.html">diario</a>
-    <script src="../js/diario.js"></script>
+  <header class="topo">
+    <a class="voltar" href="../index.html" aria-label="Voltar ao menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </a>
+
+    <div class="topo-titulo">
+      <h1>
+        Meu Diário
+        <img class="icone-diario" src="../img/diario.svg" alt="" aria-hidden="true">
+      </h1>
+      <p>Um espaço seu para registrar o que você sente</p>
+    </div>
+
+    <img class="avatar" src="../img/logo-unplug.png" alt="Avatar">
+  </header>
+
+  <main class="principal">
+    <div class="timeline">
+      <form id="form-diario" class="novo-registro">
+        <div class="campos">
+          <input type="text" id="titulo" placeholder="Título (opcional)" maxlength="80" autocomplete="off">
+          <textarea id="conteudo" rows="1" placeholder="Escreva o que passou pela sua cabeça hoje..."></textarea>
+        </div>
+        <button type="submit" class="btn-principal">Salvar</button>
+      </form>
+
+      <p id="mensagem" class="mensagem" role="status"></p>
+
+      <div id="lista"></div>
+    </div>
+  </main>
+
+  <script src="../js/diario.js"></script>
 </body>
 </html>
