@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/meditacao.css">
-    <title>Meditação</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../img/logo-unplug.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/meditacao.css">
+  <title>Meditação</title>
 </head>
+
 <body>
-    <a href="../index.html">meditacao</a>
-    <script src="../js/meditacao.js"></script>
+  <main class="tela">
+
+    <div class="ondas" aria-hidden="true">
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+
+          <linearGradient id="onda-fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2E2A9A" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#1D1A66" stop-opacity="0.1" />
+          </linearGradient>
+
+          <linearGradient id="onda-frente" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2A2A8C" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#0E1B54" stop-opacity="0.2" />
+          </linearGradient>
+
+        </defs>
+
+        <!-- onda de trás -->
+        <path fill="url(#onda-fundo)"
+          d="M0,220 C240,160 420,120 720,190 C1020,260 1200,250 1440,170 L1440,400 L0,400 Z" />
+        <!-- onda da frente -->
+        <path fill="url(#onda-frente)"
+          d="M0,300 C200,250 460,230 720,280 C1000,335 1220,320 1440,260 L1440,400 L0,400 Z" />
+      </svg>
+    </div>
+
+    <header class="topo">
+
+      <a href="../index.html" class="voltar" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+      </a>
+
+      <h1>
+        Meditação
+        <img class='icone_meditacao' src="../img/meditacao.svg" alt="icone_lotus">
+      </h1>
+
+      <a href="../index.html" class="logo-link" aria-label="Ir para o menu">
+        <img class="logo" src="../img/logo-unplug.png" alt="logo-unplug">
+      </a>
+      
+
+    </header>
+
+    <section class="palco">
+      <img class="elefante" src="../img/elefante_meditando.png" alt="elefante">
+
+      <div class="respiracao">
+
+        <p class="fase" id="fase" aria-live="polite">Inspire...</p>
+        <div class="circulo" id="circulo" role="img" aria-label="Círculo de respiração guiada">
+          <img class="circulo-img" src="../img/circulo.png" alt="">
+          <span id="contador">3</span>
+        </div>
+
+        <div class="seletor">
+
+          <button type="button" class="play" id="btnPlay" aria-label="Iniciar pausa">
+            <svg id="iconePlay" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>
+            <svg id="iconePause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" hidden><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <span class="rotulo" id="rotulo">Pausa Rápida · 03:00</span>
+          <svg class="seta" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          <select id="duracao" aria-label="Escolher duração da pausa">
+            <option value="180" data-nome="Pausa Rápida" selected>Pausa Rápida · 03:00</option>
+            <option value="300" data-nome="Pausa Média">Pausa Média · 05:00</option>
+            <option value="600" data-nome="Pausa Longa">Pausa Longa · 10:00</option>
+
+          </select>
+        </div>
+      </div>
+      <img class="formas" src="../img/arvores.png" alt="arvores" aria-hidden="true">
+      
+    </section>
+  </main>
+
+  <script src="../js/meditacao.js"></script>
+
 </body>
 </html>
