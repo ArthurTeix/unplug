@@ -1,0 +1,327 @@
+:root {
+    --fundo: #061536;
+    --texto: #ffffff;
+    --texto-suave: #c9d3f5;
+    --vidro: rgba(139, 92, 246, 0.18);
+    --borda-vidro: rgba(167, 139, 250, 0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+[hidden] { display: none !important; }
+
+button, select {
+    font-family: inherit;
+}
+
+body {
+    font-family: "Fredoka", system-ui, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+}
+
+.tela {
+    position: relative;
+    isolation: isolate;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 28px 40px 36px;
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(56, 80, 200, 0.18), transparent 55%),
+        var(--fundo);
+}
+
+.topo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.voltar {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--texto);
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.voltar:hover {
+    background: rgb(255, 255, 255, 0.13);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.voltar:active {
+    transform: translateY(0);
+}
+
+.topo h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.icone_meditacao {
+    width: 28px;
+    height: 28px;
+}
+
+.logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.logo-link {
+    margin-left: auto;
+    display: block;
+}
+
+.palco {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+}
+
+.elefante {
+    top: 40px;
+    right: -150px;
+    position: relative;
+    width: min(400px, 100%);
+    justify-self: start;
+    z-index: 1;
+}
+
+.formas {
+    position: absolute;
+    right: -40px;
+    bottom: 100px;
+    width: min(450px, 28vw);
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.respiracao {
+    position: relative;
+    top: -40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.fase {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--texto-suave);
+}
+
+.circulo {
+    --duracao-fase: 3s;
+    --escala: 1;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+    transform: scale(var(--escala));
+    transition: transform var(--duracao-fase) ease-in-out;
+}
+
+/* imagem e número ocupam a mesma célula: o número fica por cima, no centro */
+.circulo-img,
+#contador {
+    grid-area: 1 / 1;
+}
+
+.circulo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: translateY(3%);   /* o centro do desenho fica um pouco acima do meio da imagem */
+}
+
+.circulo.inspire,
+.circulo.segure { --escala: 1.15; }
+.circulo.expire  { --escala: 0.9; }
+
+
+
+
+
+
+#contador {
+    position: relative;          /* garante que o número fica na frente da imagem */
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #c4b5fd;
+}
+
+.seletor {
+    --recuo-select: 68px;        /* onde começa a área clicável do select (depois do play) */
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 24px 12px 14px;
+    border-radius: 999px;
+    background: var(--vidro);
+    border: 1px solid var(--borda-vidro);
+    color: #c4b5fd;
+    font-size: 1.05rem;
+    font-weight: 500;
+    backdrop-filter: blur(6px);
+}
+
+.seletor:hover,
+.seletor:focus-within {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(196, 181, 253, 0.4);
+    box-shadow: 0 0 18px rgba(139, 92, 246, 0.1);
+}
+
+.seta {
+    transition: transform 0.2s ease;
+}
+
+.seletor:hover .seta {
+    transform: translateY(2px);
+}
+
+.play {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #a78bfa;
+    cursor: pointer;
+}
+
+.play svg,
+.seta {
+    width: 24px;
+    height: 24px;
+}
+
+#duracao {
+    position: absolute;
+    inset: 0 0 0 var(--recuo-select);
+    width: calc(100% - var(--recuo-select));
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.ondas {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50vh;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.ondas svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (max-width: 1280px), (max-height: 720px) {
+    .respiracao { gap: 10px; }
+
+    .elefante {
+        width: min(353px, 100%);
+        right: -40px;
+        top: -30px;
+    }
+
+    .formas {
+        width: min(350px, 28vw);
+        bottom: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tela {
+        padding: 18px 24px 0;
+    }
+
+    /* cabeçalho */
+    .topo { gap: 8px; }
+    .voltar { width: 32px; height: 32px; }
+    .topo h1 { font-size: 1.5rem; }
+    .icone_meditacao { width: 24px; height: 24px; }
+    .logo { width: 40px; height: 40px; }
+
+    /* o palco vira uma coluna só */
+    .palco {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: clamp(12px, 4vh, 36px);
+    }
+
+    .respiracao { top: 0; }
+
+    .circulo {
+        width: 290px;
+        height: 290px;
+    }
+
+    .fase { font-size: 1.7rem; }
+
+    /* botão de escolher o tempo */
+    .seletor {
+        --recuo-select: 52px;
+        width: 214px;
+        height: 34px;
+        padding: 0 12px 0 8px;
+        gap: 8px;
+        justify-content: space-between;
+        white-space: nowrap;
+        font-size: 0.75rem;
+    }
+
+    .play { width: 28px; height: 28px; }
+    .play svg,
+    .seta { width: 20px; height: 20px; }
+
+    .elefante {
+        position: absolute;
+        top: auto;
+        right: auto;
+        left: 4px;
+        bottom: 18px;
+        width: 94px;
+    }
+
+    .formas {
+        right: -24px;
+        bottom: 20px;
+        width: 128px;
+    }
+
+    .ondas { height: 30vh; }
+}
