@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/consultas.css">
-    <title>Consultas com Profissionais</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conversar com profissionais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500&family=Inter:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/profissionais.css">
 </head>
 <body>
-    <a href="../index.html">profissionais</a>
-    <script src="../js/consultas.js"></script>
+
+<main class="tela" id="tela">
+
+<div class="ondas" aria-hidden="true"></div>
+
+  <button class="voltar" id="btn-voltar" aria-label="Voltar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 4 7 12 15 20"/>
+    </svg>
+  </button>
+
+  <h1 class="titulo">
+    Conversar com profissionais
+    <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/>
+      <path d="M1 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2z"/>
+      <path d="M13 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2z"/>
+    </svg>
+  </h1>
+  <p class="subtitulo">Tudo bem precisar de ajuda...</p>
+
+  <div class="logo" aria-label="Logo elefante">
+  <a href="../index.html" aria-label="Ir para o início">
+    <img src="../img/logo-unplug.png" alt="Logo Unplug">
+  </a>
+</div>
+
+  <!-- Cards da lista dos profissionais -->
+  <ul class="lista" id="lista"></ul>
+
+</main>
+
+<script src="../js/profissionais.js"></script>
 </body>
 </html>
