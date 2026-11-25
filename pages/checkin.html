@@ -3,11 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logo-unplug.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/checkin.css">
-    <title>Check-in de Emoções</title>
+    <title>Unplug - Check-in Diário</title>
 </head>
 <body>
-    <a href="../index.html">check-in</a>
+    <div class="tela">
+        <!-- Ondas de fundo -->
+        <div class="ondas" aria-hidden="true">
+            <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="onda-fundo" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#2E2A9A" stop-opacity="0.55" />
+                        <stop offset="100%" stop-color="#1D1A66" stop-opacity="0.1" />
+                    </linearGradient>
+                    <linearGradient id="onda-frente" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#2A2A8C" stop-opacity="0.75" />
+                        <stop offset="100%" stop-color="#0E1B54" stop-opacity="0.2" />
+                    </linearGradient>
+                </defs>
+                <path fill="url(#onda-fundo)" d="M0,220 C240,160 420,120 720,190 C1020,260 1200,250 1440,170 L1440,400 L0,400 Z" />
+                <path fill="url(#onda-frente)" d="M0,300 C200,250 460,230 720,280 C1000,335 1220,320 1440,260 L1440,400 L0,400 Z" />
+            </svg>
+        </div>
+
+        <!-- Cabeçalho -->
+        <header class="topo">
+            <a href="../index.html" class="voltar" aria-label="Voltar ao menu">
+                &#10094;
+            </a>
+            <h1>
+                Check-in Diário
+                <img src="../img/check-in.svg" alt="" class="icone-titulo">
+            </h1>
+            <a href="../index.html" class="logo-link">
+                <img src="../img/logo-unplug.png" alt="Unplug" class="logo">
+            </a>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="conteudo">
+            <section class="bloco-humor">
+                <h2>Como você está se sentindo agora?</h2>
+                <p class="subtitulo">Tire um momento para perceber como você está.</p>
+
+                <div class="lista-humores">
+                    <button type="button" class="humor-btn" data-humor="Muito triste">
+                        <img src="../img/muito_triste.svg" alt="Muito triste" class="carinha">
+                        <span>Muito triste</span>
+                    </button>
+
+                    <button type="button" class="humor-btn" data-humor="Triste">
+                        <img src="../img/triste.svg" alt="Triste" class="carinha">
+                        <span>Triste</span>
+                    </button>
+
+                    <button type="button" class="humor-btn" data-humor="Neutro">
+                        <img src="../img/neutro.svg" alt="Neutro" class="carinha">
+                        <span>Neutro</span>
+                    </button>
+
+                    <button type="button" class="humor-btn" data-humor="Feliz">
+                        <img src="../img/feliz.svg" alt="Feliz" class="carinha">
+                        <span>Feliz</span>
+                    </button>
+
+                    <button type="button" class="humor-btn" data-humor="Muito feliz">
+                        <img src="../img/muito_feliz.svg" alt="Muito feliz" class="carinha">
+                        <span>Muito feliz</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="bloco-gatilhos">
+                <h3>O que está influenciando o seu humor hoje?</h3>
+                <p class="subtitulo-menor">Selecione quantas quiser...</p>
+
+                <div class="lista-tags">
+                    <button type="button" class="tag-btn">Trabalho</button>
+                    <button type="button" class="tag-btn">Família</button>
+                    <button type="button" class="tag-btn">Relacionamento</button>
+                    <button type="button" class="tag-btn">Sono</button>
+                    <button type="button" class="tag-btn">Saúde</button>
+                    <button type="button" class="tag-btn">Amigos</button>
+                </div>
+            </section>
+
+            <div class="acoes">
+                <button type="button" class="btn-continuar" id="btn-continuar">Continuar</button>
+                <a href="../index.html" class="link-pular">Prefiro não dizer hoje...</a>
+            </div>
+        </main>
+
+        <!-- Botão de histórico -->
+        <button type="button" class="btn-historico" id="btn-historico" aria-label="Ver histórico de check-ins">
+            📅
+        </button>
+
+        <!-- Modal de Histórico (GET) -->
+        <div class="modal-fundo" id="modal-historico" hidden>
+            <div class="modal-caixa">
+                <div class="modal-topo">
+                    <h3>Histórico de Check-ins</h3>
+                    <button type="button" class="btn-fechar" id="btn-fechar">&times;</button>
+                </div>
+                <div class="lista-historico" id="lista-historico">
+                    <p class="aviso-vazio">Carregando...</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="../js/checkin.js"></script>
 </body>
 </html>
