@@ -73,15 +73,11 @@ body {
     transform: translateY(0);
 }
 
-/* mesmo formato do cabeçalho de Indicações, mantendo o peso da fonte da Meditação */
-.topo h1 {
-    font-weight: 600;
-}
-
 .titulo p {
+    margin-top: 4px;
     font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--texto);
+    font-weight: 300;
+    color: var(--texto-suave);
 }
 
 .icone_meditacao {
@@ -243,7 +239,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 50vh;
+    height: 45vh;
     z-index: 0;
     pointer-events: none;
     opacity: 0.7;
@@ -270,17 +266,27 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-height: 720px) {
     .tela {
-        padding: 18px 24px 0;
+        padding: 20px 40px 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .tela {
+        padding: 20px 12px 28px;
     }
 
-    /* cabeçalho */
-    .topo { gap: 8px; }
+    .topo { gap: 10px; }
     .voltar { width: 32px; height: 32px; }
-    .topo h1 { font-size: 1.5rem; }
-    .icone_meditacao { width: 24px; height: 24px; }
-    .logo { width: 40px; height: 40px; }
+    .voltar svg { width: 16px; height: 16px; }
+    .titulo h1 { gap: 6px; font-size: 1.4rem; }
+    .icone_meditacao { width: 20px; height: 20px; }
+    .titulo p { font-size: 0.72rem; }
+    .logo { width: 44px; height: 44px; }
+}
+
+@media (max-width: 480px) {
 
     /* o palco vira uma coluna só */
     .palco {
