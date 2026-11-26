@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logo-unplug.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/indicacoes.css">
     <title>Indicações</title>
 </head>
 
 <body>
     <main class="tela">
+        <!-- Ondas de fundo -->
         <div class="ondas" aria-hidden="true">
             <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -19,19 +19,13 @@
                         <stop offset="0%" stop-color="#2E2A9A" stop-opacity="0.55" />
                         <stop offset="100%" stop-color="#1D1A66" stop-opacity="0.1" />
                     </linearGradient>
-
                     <linearGradient id="onda-frente" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stop-color="#2A2A8C" stop-opacity="0.75" />
                         <stop offset="100%" stop-color="#0E1B54" stop-opacity="0.2" />
                     </linearGradient>
                 </defs>
-
-                <!-- onda de trás -->
-                <path fill="url(#onda-fundo)"
-                    d="M0,220 C240,160 420,120 720,190 C1020,260 1200,250 1440,170 L1440,400 L0,400 Z" />
-                <!-- onda da frente -->
-                <path fill="url(#onda-frente)"
-                    d="M0,300 C200,250 460,230 720,280 C1000,335 1220,320 1440,260 L1440,400 L0,400 Z" />
+                <path fill="url(#onda-fundo)" d="M0,220 C240,160 420,120 720,190 C1020,260 1200,250 1440,170 L1440,400 L0,400 Z" />
+                <path fill="url(#onda-frente)" d="M0,300 C200,250 460,230 720,280 C1000,335 1220,320 1440,260 L1440,400 L0,400 Z" />
             </svg>
         </div>
 

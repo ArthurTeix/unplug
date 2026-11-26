@@ -478,6 +478,14 @@ a {
     color: #ffb3bc;
 }
 
+
+/* ========== RESPONSIVO: ALTURA ATÉ 720px ========== */
+@media (max-height: 720px) {
+    .tela {
+        padding: 20px 40px 24px;
+    }
+}
+
 /* ========== RESPONSIVO (MOBILE até 900px) ========== */
 @media (max-width: 900px) {
     .tela {
@@ -485,7 +493,7 @@ a {
         min-height: 100dvh;
         overflow-x: hidden;
         overflow-y: auto;
-        padding: 20px 16px 28px;
+        padding: 20px 12px 28px;
         grid-template-columns: minmax(0, 1fr);
     }
 
@@ -497,7 +505,11 @@ a {
     .voltar {
         width: 32px;
         height: 32px;
-        font-size: 0.9rem;
+    }
+
+    .voltar svg{
+        width: 16px;
+        height: 16px;
     }
 
     .topo h1 {
