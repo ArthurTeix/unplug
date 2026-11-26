@@ -11,35 +11,42 @@
 </head>
 <body>
 
-<main class="tela" id="tela">
-
 <div class="ondas" aria-hidden="true"></div>
 
-  <button class="voltar" id="btn-voltar" aria-label="Voltar">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 4 7 12 15 20"/>
-    </svg>
-  </button>
+<main class="tela" id="tela">
+  <header class="cabecalho">
+    <div class="cabecalho-esq">
+      <button class="voltar" id="btn-voltar" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 4 7 12 15 20"/>
+        </svg>
+      </button>
 
-  <h1 class="titulo">
-    Conversar com profissionais
-    <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/>
-      <path d="M1 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2z"/>
-      <path d="M13 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2z"/>
-    </svg>
-  </h1>
-  <p class="subtitulo">Tudo bem precisar de ajuda...</p>
+      <div>
+        <h1 class="titulo">
+          Conversar com
+          <span class="titulo-linha">
+            profissionais
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/>
+              <path d="M1 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2z"/>
+              <path d="M13 20v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2z"/>
+            </svg>
+          </span>
+        </h1>
+        <p class="subtitulo">Tudo bem precisar de ajuda...</p>
+      </div>
+    </div>
 
-  <div class="logo" aria-label="Logo elefante">
-  <a href="../index.html" aria-label="Ir para o início">
-    <img src="../img/logo-unplug.png" alt="Logo Unplug">
-  </a>
-</div>
+    <div class="logo" aria-label="Logo elefante">
+      <a href="../index.html" aria-label="Ir para o início">
+        <img src="../img/logo-unplug.png" alt="Logo Unplug">
+      </a>
+    </div>
+  </header>
 
   <!-- Cards da lista dos profissionais -->
   <ul class="lista" id="lista"></ul>
-
 </main>
 
 <script src="../js/profissionais.js"></script>
