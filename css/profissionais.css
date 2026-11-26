@@ -1,0 +1,327 @@
+:root {
+  /* Cores */
+  --fundo: #061536;
+  --branco: #FAFAFA;
+  --card-1: #2E2686;
+  --card-2: #1D1A66;
+  --roxo: #7A63DD;
+
+  /* Escala e espaçamentos (Desktop padrão) */
+  --tela-pad: 1.5rem 2.5rem 1.75rem;
+  --cab-gap: 1.5rem;
+  --cab-esq-gap: 1.75rem;
+  --voltar-tam: 2.5rem;
+  --voltar-ico: 1.25rem;
+  --titulo-fs: 2.125rem;
+  --titulo-gap: 0.75rem;
+  --titulo-ico: 1.95rem;
+  --subtitulo-fs: 1.4rem;
+  --logo-tam: 3rem;
+
+  --lista-gap: 1.15rem;
+  --card-min-h: 7.5rem;
+  --card-pad: 1rem 2rem;
+  --card-gap: 2rem;
+  --card-raio: 1.75rem;
+  --foto-tam: 5.25rem;
+  --nome-fs: 1.45rem;
+  --esp-fs: 1.4rem;
+  --btn-w: 14rem;
+  --btn-h: 4rem;
+  --btn-fs: 1.4rem;
+  --btn-raio: 1.75rem;
+  --btn-sombra: 0.25rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--fundo);
+  min-height: 100dvh;
+  font-family: 'Fredoka', sans-serif;
+  color: var(--branco);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.ondas {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 58vh;
+  background: url('../img/ondas-neon.png') no-repeat center bottom / cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tela {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100dvh;
+  padding: var(--tela-pad);
+}
+
+/* Cabeçalho */
+.cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--cab-gap);
+}
+
+.cabecalho-esq {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cab-esq-gap);
+  min-width: 0;
+}
+
+.voltar {
+  width: var(--voltar-tam);
+  height: var(--voltar-tam);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.voltar svg {
+  width: var(--voltar-ico);
+  height: var(--voltar-ico);
+}
+
+.titulo {
+  display: block;
+  font-weight: 500;
+  font-size: var(--titulo-fs);
+  line-height: 1.15;
+  letter-spacing: -0.022em;
+}
+
+.titulo-linha {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--titulo-gap);
+}
+
+.titulo svg {
+  width: var(--titulo-ico);
+  height: var(--titulo-ico);
+  flex-shrink: 0;
+}
+
+.subtitulo {
+  margin-top: 0.25rem;
+  font-weight: 300;
+  font-size: var(--subtitulo-fs);
+  line-height: 1.35;
+  letter-spacing: -0.022em;
+}
+
+.logo {
+  width: var(--logo-tam);
+  height: var(--logo-tam);
+  flex-shrink: 0;
+}
+
+.logo a,
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Lista de profissionais */
+.lista {
+  margin: 1.35rem auto 0;
+  width: 100%;
+  max-width: 55.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lista-gap);
+  list-style: none;
+}
+
+.card {
+  min-height: var(--card-min-h);
+  border-radius: var(--card-raio);
+  background: linear-gradient(90deg, var(--card-1) 0%, var(--card-2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--card-gap);
+  padding: var(--card-pad);
+}
+
+.card-topo {
+  display: flex;
+  align-items: center;
+  gap: var(--card-gap);
+  flex: 1;
+  min-width: 0;
+}
+
+.foto {
+  width: var(--foto-tam);
+  height: var(--foto-tam);
+  border-radius: 50%;
+  object-fit: cover;
+  background: #4b3fb0;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.nome {
+  font-weight: 500;
+  font-size: var(--nome-fs);
+  line-height: 1.35;
+  letter-spacing: -0.022em;
+}
+
+.especialidade {
+  font-weight: 300;
+  font-size: var(--esp-fs);
+  line-height: 1.35;
+  letter-spacing: -0.022em;
+}
+
+.btn {
+  width: var(--btn-w);
+  height: var(--btn-h);
+  border: none;
+  border-radius: var(--btn-raio);
+  background: var(--roxo);
+  box-shadow: 0 var(--btn-sombra) 0 var(--sombra);
+  color: var(--branco);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: var(--btn-fs);
+  letter-spacing: -0.019em;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.1s, box-shadow 0.1s, filter 0.15s;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: translateY(var(--btn-sombra));
+  box-shadow: 0 0 0 var(--sombra);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  :root {
+    --titulo-fs: 1.85rem;
+    --titulo-ico: 1.65rem;
+    --subtitulo-fs: 1.2rem;
+    --nome-fs: 1.25rem;
+    --esp-fs: 1.15rem;
+
+    --card-pad: 1.15rem 1.5rem;
+    --card-gap: 1.25rem;
+    --btn-w: 11.5rem;
+    --btn-h: 3.75rem;
+    --btn-fs: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  :root {
+    --tela-pad: 1.15rem 1.1rem 1.25rem;
+    --cab-gap: 0.4rem;
+    --cab-esq-gap: 0.6rem;
+    --voltar-tam: 2.1rem;
+    --voltar-ico: 1rem;
+    --titulo-fs: 1.7rem;
+    --titulo-gap: 0.35rem;
+    --titulo-ico: 1.35rem;
+    --subtitulo-fs: 0.95rem;
+    --logo-tam: 2.5rem;
+
+    --lista-gap: 0.85rem;
+    --card-min-h: auto;
+    --card-pad: 0.95rem 1.05rem;
+    --card-gap: 0.85rem;
+    --card-raio: 1.5rem;
+    --foto-tam: 3.5rem;
+    --nome-fs: 1.1rem;
+    --esp-fs: 0.9rem;
+    --btn-w: 100%;
+    --btn-h: 2.3rem;
+    --btn-fs: 0.95rem;
+    --btn-raio: 1.25rem;
+    --btn-sombra: 0.2rem;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+
+  .tela {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cabecalho,
+  .cabecalho-esq {
+    align-items: flex-start;
+  }
+
+  .voltar {
+    margin-top: 0.15rem;
+  }
+
+  .titulo-linha {
+    display: flex;
+  }
+
+  .lista {
+    margin: auto 0;
+    padding-top: 0.75rem;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Mobile pequeno (ex.: 320px) */
+@media (max-width: 380px) {
+  :root {
+    --tela-pad: 1rem 0.85rem 1.15rem;
+    --cab-gap: 0.3rem;
+    --cab-esq-gap: 0.4rem;
+    --voltar-tam: 1.85rem;
+    --voltar-ico: 0.9rem;
+    --titulo-fs: 1.32rem;
+    --titulo-gap: 0.25rem;
+    --titulo-ico: 1.05rem;
+    --subtitulo-fs: 0.82rem;
+    --logo-tam: 2.15rem;
+    --nome-fs: 1rem;
+    --esp-fs: 0.82rem;
+  }
+}
