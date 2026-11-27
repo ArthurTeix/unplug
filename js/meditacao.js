@@ -12,6 +12,13 @@ const icPlay   = document.getElementById('iconePlay');
 const icPause  = document.getElementById('iconePause');
 const rotulo   = document.getElementById('rotulo');
 const duracao  = document.getElementById('duracao');
+const elefante = document.querySelector('.elefante');
+
+// liga/desliga a levitação do elefante
+function animarElefante(estado) {
+  elefante.classList.toggle('levitando', estado !== 'desligado');
+  elefante.classList.toggle('parado', estado === 'parado');
+}
 
 let intervalo = null;
 let indiceFase = 0;
@@ -30,8 +37,8 @@ function atualizarRotulo() {
 }
 
 function atualizarBotao(rodando) {
-  icPlay.hidden = rodando;
-  icPause.hidden = !rodando;
+  icPlay.toggleAttribute('hidden', rodando);
+  icPause.toggleAttribute('hidden', !rodando);
   btnPlay.setAttribute('aria-label', rodando ? 'Pausar' : 'Iniciar pausa');
 }
 
@@ -48,6 +55,9 @@ function entrarNaFase(indice, segundos = FASES[indice].segundos) {
   circulo.style.setProperty('--duracao-fase', `${segundos}s`);
   circulo.classList.remove('inspire', 'segure', 'expire');
   circulo.classList.add(f.classe);
+
+  // no "segure" o elefante fica parado; no inspire/expire ele levita
+  animarElefante(f.classe === 'segure' ? 'parado' : 'levitando');
 }
 
 function tick() {
@@ -86,6 +96,8 @@ function pausar() {
   circulo.style.setProperty('--duracao-fase', '0s');
   circulo.style.transform = atual;
 
+  animarElefante('parado');
+
   fase.textContent = 'Pausado';
   atualizarBotao(false);
 }
@@ -100,6 +112,7 @@ function concluir() {
 
   fase.textContent = 'Sessão finalizada, respire fundo ✨';
   contador.textContent = '✓';
+  animarElefante('desligado');
   atualizarBotao(false);
 }
 
@@ -114,6 +127,7 @@ function reiniciar() {
   fase.textContent = FASES[0].texto;
   contador.textContent = FASES[0].segundos;
   atualizarRotulo();
+  animarElefante('desligado');
 }
 
 btnPlay.addEventListener('click', () => {
