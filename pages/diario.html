@@ -3,46 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Diário</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../img/logo-unplug.png" type="image/x-icon">
   <link rel="stylesheet" href="../css/diario.css">
+  <title>Meu Diário</title>
 </head>
 <body>
-  <header class="topo">
-    <a class="voltar" href="../index.html" aria-label="Voltar ao menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="15 18 9 12 15 6"></polyline>
+  <div class="tela">
+    <!-- Ondas de fundo -->
+    <div class="ondas" aria-hidden="true">
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="onda-fundo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2E2A9A" stop-opacity="0.55" />
+            <stop offset="100%" stop-color="#1D1A66" stop-opacity="0.1" />
+          </linearGradient>
+          <linearGradient id="onda-frente" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2A2A8C" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#0E1B54" stop-opacity="0.2" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#onda-fundo)" d="M0,220 C240,160 420,120 720,190 C1020,260 1200,250 1440,170 L1440,400 L0,400 Z" />
+        <path fill="url(#onda-frente)" d="M0,300 C200,250 460,230 720,280 C1000,335 1220,320 1440,260 L1440,400 L0,400 Z" />
       </svg>
-    </a>
-
-    <div class="topo-titulo">
-      <h1>
-        Meu Diário
-        <img class="icone-diario" src="../img/diario.svg" alt="" aria-hidden="true">
-      </h1>
-      <p>Um espaço seu para registrar o que você sente</p>
     </div>
 
-    <img class="avatar" src="../img/logo-unplug.png" alt="Avatar">
-  </header>
+    <header class="topo">
+      <a class="voltar" href="../index.html" aria-label="Voltar ao menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 5l-7 7 7 7" />
+        </svg>
+      </a>
 
-  <main class="principal">
-    <div class="timeline">
-      <form id="form-diario" class="novo-registro">
-        <div class="campos">
-          <input type="text" id="titulo" placeholder="Título (opcional)" maxlength="80" autocomplete="off">
-          <textarea id="conteudo" rows="1" placeholder="Escreva o que passou pela sua cabeça hoje..."></textarea>
-        </div>
-        <button type="submit" class="btn-principal">Salvar</button>
-      </form>
+      <div class="topo-titulo">
+        <h1>
+          Meu Diário
+          <img class="icone-diario" src="../img/diario.svg" alt="" aria-hidden="true">
+        </h1>
+        <p>Um espaço seu para registrar o que você sente</p>
+      </div>
 
-      <p id="mensagem" class="mensagem" role="status"></p>
+      <a href="../index.html" class="logo-link" aria-label="Ir para o menu">
+        <img class="logo" src="../img/logo-unplug.png" alt="Unplug">
+      </a>
+    </header>
 
-      <div id="lista"></div>
-    </div>
-  </main>
+    <main class="principal">
+      <div class="timeline">
+        <form id="form-diario" class="novo-registro">
+          <div class="campos">
+            <input type="text" id="titulo" placeholder="Título (opcional)" maxlength="80" autocomplete="off">
+            <textarea id="conteudo" rows="1" placeholder="Escreva o que passou pela sua cabeça hoje..."></textarea>
+          </div>
+          <button type="submit" class="btn-principal">Salvar</button>
+        </form>
+
+        <p id="mensagem" class="mensagem" role="status"></p>
+
+        <div id="lista"></div>
+      </div>
+    </main>
+  </div>
 
   <script src="../js/diario.js"></script>
 </body>

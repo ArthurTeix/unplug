@@ -4,7 +4,7 @@
     --cor-texto: #FFF;
     --cor-primaria: #5A34D6;
     --cor-primaria-hover: #6B45E8;
-    --fundo-pagina: linear-gradient(180deg, #04112B 0%, #071B45 100%);
+    --fundo-pagina: radial-gradient(ellipse at 50% 45%, rgba(56, 80, 200, 0.18), transparent 55%), #061536;
     --fundo-lateral: rgba(90, 52, 214, 0.3);
     --fundo-card: rgba(90, 52, 214, 0.45);
     --gradiente-logo: linear-gradient(162deg, #C97BFD 41.12%, #80C6FF 60.76%, #5826FA 81.56%);
@@ -27,14 +27,16 @@ html {
 }
 
 body {
-    margin: 2rem;
+    padding: 2rem;
     background: var(--fundo-pagina);
     font-family: 'Fredoka', sans-serif;
     color: var(--cor-texto);
     overflow-x: hidden;
+    min-height: 100dvh;
 
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 3rem;
 }
 
@@ -95,6 +97,7 @@ button:active {
     height: 45vh;
     z-index: -1;
     pointer-events: none;
+    opacity: 0.7;
 }
 
 .ondas svg {
@@ -152,9 +155,8 @@ button:active {
 .conteudo {
     display: flex;
     flex-direction: column;
-    flex: 1;
     gap: 2rem;
-    padding-top: 6.25rem;
+    padding-right: 6rem;
 }
 
 .saudacao h1 {
@@ -247,6 +249,7 @@ button:active {
         min-height: 100dvh;
         flex-direction: column;
         align-items: stretch;
+        justify-content: flex-start;
         gap: 1.25rem;
     }
 
@@ -276,6 +279,8 @@ button:active {
         flex: none;
         gap: 1.25rem;
         padding-top: 0;
+        padding-right: 0;
+        margin: auto 0;
     }
 
     .saudacao h1 {

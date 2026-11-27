@@ -73,9 +73,11 @@ body {
     transform: translateY(0);
 }
 
-/* mesmo formato do cabeçalho de Indicações, mantendo o peso da fonte da Meditação */
-.topo h1 {
-    font-weight: 600;
+.titulo p {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--texto-suave);
 }
 
 .titulo p {
@@ -103,41 +105,40 @@ body {
 .palco {
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    gap: 24px;
+    gap: clamp(16px, 3vw, 40px);
+    padding-bottom: clamp(8px, 3vh, 28px);
 }
 
 .elefante {
-    top: 40px;
-    right: -150px;
-    position: relative;
-    width: min(400px, 100%);
+    width: clamp(300px, min(28vw, 50vh), 420px);
+    align-self: end;
     justify-self: start;
     z-index: 1;
 }
 
 .formas {
-    position: absolute;
-    right: -40px;
-    bottom: 100px;
-    width: min(450px, 28vw);
+    width: clamp(200px, min(27vw, 52vh), 390px);
+    align-self: end;
+    justify-self: end;
     z-index: 1;
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .respiracao {
-    position: relative;
-    top: -40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: clamp(12px, 2vh, 22px);
 }
 
 .fase {
-    font-size: 1.4rem;
+    font-size: clamp(1.25rem, 2.2vh, 1.6rem);
     font-weight: 400;
     color: var(--texto-suave);
 }
@@ -146,8 +147,8 @@ body {
     --duracao-fase: 3s;
     --escala: 1;
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: clamp(220px, min(32vw, 46vh), 360px);
+    height: clamp(220px, min(32vw, 46vh), 360px);
     display: grid;
     place-items: center;
     transform: scale(var(--escala));
@@ -243,7 +244,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 50vh;
+    height: 45vh;
     z-index: 0;
     pointer-events: none;
     opacity: 0.7;
@@ -255,32 +256,27 @@ body {
     display: block;
 }
 
-@media (max-width: 1280px), (max-height: 720px) {
-    .respiracao { gap: 10px; }
-
-    .elefante {
-        width: min(353px, 100%);
-        right: -40px;
-        top: -30px;
-    }
-
-    .formas {
-        width: min(350px, 28vw);
-        bottom: 80px;
+@media (max-height: 720px) {
+    .tela {
+        padding: 20px 40px 24px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
     .tela {
-        padding: 18px 24px 0;
+        padding: 20px 12px 28px;
     }
 
-    /* cabeçalho */
-    .topo { gap: 8px; }
+    .topo { gap: 10px; }
     .voltar { width: 32px; height: 32px; }
-    .topo h1 { font-size: 1.5rem; }
-    .icone_meditacao { width: 24px; height: 24px; }
-    .logo { width: 40px; height: 40px; }
+    .voltar svg { width: 16px; height: 16px; }
+    .titulo h1 { gap: 6px; font-size: 1.4rem; }
+    .icone_meditacao { width: 20px; height: 20px; }
+    .titulo p { font-size: 0.72rem; }
+    .logo { width: 44px; height: 44px; }
+}
+
+@media (max-width: 480px) {
 
     /* o palco vira uma coluna só */
     .palco {
@@ -322,13 +318,14 @@ body {
         right: auto;
         left: 4px;
         bottom: 18px;
-        width: 94px;
+        width: 120px;
     }
 
     .formas {
-        right: -24px;
-        bottom: 20px;
-        width: 128px;
+    position: absolute;
+    right: -12px;
+    bottom: 20px;
+    width: 130px;
     }
 
     .ondas { height: 30vh; }

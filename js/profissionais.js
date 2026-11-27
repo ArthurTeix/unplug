@@ -32,8 +32,3 @@ lista.addEventListener('click', (e) => {
   console.log('Conversar com:', prof.nome);
   alert(`Iniciando conversa com ${prof.nome}...`);
 });
-
-// Botão voltar
-document.getElementById('btn-voltar').addEventListener('click', () => {
-  window.location.href = '../index.html';
-});
